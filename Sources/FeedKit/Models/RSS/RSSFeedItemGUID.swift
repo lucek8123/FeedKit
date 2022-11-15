@@ -65,7 +65,7 @@ public class RSSFeedItemGUID {
         /// isPermaLink is optional, its default value is true. If its value is false,
         /// the guid may not be assumed to be a url, or a url to anything in
         /// particular.
-        public var isPermaLink: Bool?
+        public var isPermaLink: Bool = true
         
     }
     
@@ -100,7 +100,11 @@ extension RSSFeedItemGUID.Attributes {
         
         self.init()
         
-        self.isPermaLink = attributeDict["isPermaLink"]?.toBool()
+        if  attributeDict["isPermaLink"]?.toBool() == false {
+            self.isPermaLink = false
+        } else {
+            self.isPermaLink = true
+        }
         
     }
     

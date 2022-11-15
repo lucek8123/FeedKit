@@ -44,11 +44,11 @@ class JSONTests: BaseTestCase {
         jsonFeed.icon = "https://example.org/icon.jpg"
         jsonFeed.favicon = "https://example.org/favicon.ico"
         jsonFeed.expired = false
-        jsonFeed.author = JSONFeedAuthor(
+        jsonFeed.authors = [JSONFeedAuthor(
             name: "Brent Simmons",
             url: "http://example.org/",
             avatar: "https://example.org/avatar.png"
-        )
+        )]
         jsonFeed.hubs = [
             JSONFeedHub(
                 type: "Type 1",
@@ -72,11 +72,11 @@ class JSONTests: BaseTestCase {
                 bannerImage: "https://example.org/banner.jpg",
                 datePublished: RFC3339DateFormatter().date(from: "2014-05-09T12:04:00-07:00"),
                 dateModified: RFC3339DateFormatter().date(from: "2014-05-09T14:04:00-07:00"),
-                author: JSONFeedAuthor(
+                authors: [JSONFeedAuthor(
                     name: "Brent Simmons",
                     url: "http://example.org/",
                     avatar: "https://example.org/avatar.png"
-                ),
+                )],
                 tags: [
                     "tag1",
                     "tag2"
@@ -110,7 +110,7 @@ class JSONTests: BaseTestCase {
                 bannerImage: nil,
                 datePublished: nil,
                 dateModified: nil,
-                author: nil,
+                authors: nil,
                 tags: nil,
                 attachments: nil
             )
