@@ -145,9 +145,11 @@ extension JSONFeed {
                 }
                 
                 // Category
-                newItem.tags = (item.categories ?? []).compactMap({ category in
-                    category.value
-                })
+                if let categories = item.categories {
+                    newItem.tags = categories.compactMap({ category in
+                        category.value
+                    })
+                }
                 
                 if newFeed.items == nil {
                     newFeed.items = []
