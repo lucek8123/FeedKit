@@ -8,7 +8,7 @@
 import Foundation
 
 extension JSONFeed {
-    static func makeJSONFeed(from feed: Feed) -> JSONFeed {
+    public static func makeJSONFeed(from feed: Feed) -> JSONFeed {
         var newFeed = JSONFeed()
         switch feed {
         case .atom(let atomFeed):
@@ -164,7 +164,7 @@ extension JSONFeed {
 
 
 extension Feed {
-    func makeJSONFeed() -> JSONFeed {
+    public func makeJSONFeed() -> JSONFeed {
         JSONFeed.makeJSONFeed(from: self)
     }
 }
