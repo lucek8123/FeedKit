@@ -122,7 +122,7 @@ extension JSONFeed {
                 newItem.url = item.link
                 
                 // match is content text or HTML
-                if (item.description ?? "").hasPrefix("<") && (item.description ?? "").hasSuffix(">") {
+                if (item.description ?? "").trimmingCharacters(in: .whitespacesAndNewlines).isValidHtmlString() {
                     newItem.contentHtml = item.description
                 } else {
                     newItem.contentText = item.description
