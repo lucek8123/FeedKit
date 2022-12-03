@@ -10,13 +10,15 @@
 
 - [x] [Atom](https://tools.ietf.org/html/rfc4287)
 - [x] RSS [0.90](http://www.rssboard.org/rss-0-9-0), [0.91](http://www.rssboard.org/rss-0-9-1), [1.00](http://web.resource.org/rss/1.0/spec), [2.00](http://cyber.law.harvard.edu/rss/rss.html)
-- [x] [JSON](https://jsonfeed.org/version/1.1) (in this fork I use 1.1 version, but i'm going to support v1 (mayby in next release?)
+- [x] [JSON](https://jsonfeed.org/version/1.1)
+  - Decodeing from 1.0 and 1.1 version to 1.1
+  - Encoding only to 1.1 version 
 - [x] Namespaces
-    - [x] [Dublin Core](http://web.resource.org/rss/1.0/modules/dc/)
-    - [x] [Syndication](http://web.resource.org/rss/1.0/modules/syndication/)
-    - [x] [Content](http://web.resource.org/rss/1.0/modules/content/)
-    - [x] [Media RSS](http://www.rssboard.org/media-rss)
-    - [x] [iTunes Podcasting Tags](https://help.apple.com/itc/podcasts_connect/#/itcb54353390)
+  - [x] [Dublin Core](http://web.resource.org/rss/1.0/modules/dc/)
+  - [x] [Syndication](http://web.resource.org/rss/1.0/modules/syndication/)
+  - [x] [Content](http://web.resource.org/rss/1.0/modules/content/)
+  - [x] [Media RSS](http://www.rssboard.org/media-rss)
+  - [x] [iTunes Podcasting Tags](https://help.apple.com/itc/podcasts_connect/#/itcb54353390)
 - [x] [Documentation](http://cocoadocs.org/docsets/FeedKit)
 - [x] Unit Test Coverage
 
