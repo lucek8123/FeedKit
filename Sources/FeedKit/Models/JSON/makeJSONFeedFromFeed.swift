@@ -19,12 +19,16 @@ extension JSONFeed {
             for link in atomFeed.links ?? [] {
                 // Home page URL
                 if link.attributes?.rel == nil || link.attributes?.rel == "alternate" {
-                    newFeed.homePageURL = link.attributes?.href
+                    if let url = URL(string: link.attributes?.href ?? "") {
+                        newFeed.homePageURL = url
+                    }
                 }
                 
                 // Feed URL
                 if link.attributes?.rel == "self" {
-                    newFeed.feedUrl = link.attributes?.href
+                    if let url = URL(string: link.attributes?.href ?? "") {
+                        newFeed.feedUrl = url
+                    }
                 }
                 
                 // Hub
@@ -32,7 +36,9 @@ extension JSONFeed {
                     if newFeed.hubs == nil {
                         newFeed.hubs = []
                     }
-                    newFeed.hubs?.append(JSONFeedHub(url: link.attributes?.href))
+                    if let url = URL(string: link.attributes?.href ?? "") {
+                        newFeed.hubs?.append(JSONFeedHub(url: url))
+                    }
                 }
             }
             
@@ -54,7 +60,7 @@ extension JSONFeed {
                 if let authors = atomFeed.authors {
                     newItem.authors = []
                     for author in authors {
-                        newItem.authors?.append(JSONFeedAuthor(name: author.name, url: author.uri))
+                        newItem.authors?.append(JSONFeedAuthor(name: author.name, url: URL(string: author.uri ?? "")))
                     }
                 }
                 
@@ -63,7 +69,7 @@ extension JSONFeed {
                     if link.attributes?.rel == "enclosure" {
                         var newAttachment = JSONFeedAttachment()
                         
-                        newAttachment.url = link.attributes?.href
+                        newAttachment.url = URL(string: link.attributes?.href ?? "")
                         newAttachment.sizeInBytes = link.attributes?.length == nil ? nil : Int(link.attributes!.length!)
                         newAttachment.mimeType = link.attributes?.type
                         
@@ -113,14 +119,14 @@ extension JSONFeed {
             
             // RSS Feed image
             if rssFeed.image?.height == rssFeed.image?.width {
-                newFeed.icon = rssFeed.image?.url
+                newFeed.icon = URL(string: rssFeed.image?.url ?? "")
             }
             
             // RSS Feed items
             for item in rssFeed.items ?? [] {
                 var newItem = JSONFeedItem()
                 newItem.title = item.title
-                newItem.url = item.link
+                newItem.url = URL(string: item.link ?? "")
                 
                 // match is content text or HTML
                 if (item.description ?? "").trimmingCharacters(in: .whitespacesAndNewlines).isValidHtmlString() {
@@ -142,7 +148,7 @@ extension JSONFeed {
                 
                 // Enclosure
                 if let enclosure = item.enclosure?.attributes {
-                    newItem.attachments = [JSONFeedAttachment(url: enclosure.url, mimeType: enclosure.type, sizeInBytes: enclosure.length == nil ? nil : Int(enclosure.length!))]
+                    newItem.attachments = [JSONFeedAttachment(url: URL(string: enclosure.url ?? ""), mimeType: enclosure.type, sizeInBytes: enclosure.length == nil ? nil : Int(enclosure.length!))]
                 }
                 
                 // Category

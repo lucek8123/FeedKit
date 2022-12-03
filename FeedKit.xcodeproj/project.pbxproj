@@ -487,6 +487,14 @@
 		BB394B7D223B368C00366193 /* AmpersandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB394B7C223B368C00366193 /* AmpersandTests.swift */; };
 		BB394B7E223B368C00366193 /* AmpersandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB394B7C223B368C00366193 /* AmpersandTests.swift */; };
 		BB394B7F223B368C00366193 /* AmpersandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB394B7C223B368C00366193 /* AmpersandTests.swift */; };
+		DFE7FB4E293B5F05003E4C08 /* makeJSONFeedFromFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE7FB4D293B5F05003E4C08 /* makeJSONFeedFromFeed.swift */; };
+		DFE7FB4F293B5F05003E4C08 /* makeJSONFeedFromFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE7FB4D293B5F05003E4C08 /* makeJSONFeedFromFeed.swift */; };
+		DFE7FB50293B5F05003E4C08 /* makeJSONFeedFromFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE7FB4D293B5F05003E4C08 /* makeJSONFeedFromFeed.swift */; };
+		DFE7FB51293B5F05003E4C08 /* makeJSONFeedFromFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE7FB4D293B5F05003E4C08 /* makeJSONFeedFromFeed.swift */; };
+		DFE7FB53293B6779003E4C08 /* String + isHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE7FB52293B6779003E4C08 /* String + isHTML.swift */; };
+		DFE7FB54293B6779003E4C08 /* String + isHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE7FB52293B6779003E4C08 /* String + isHTML.swift */; };
+		DFE7FB55293B6779003E4C08 /* String + isHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE7FB52293B6779003E4C08 /* String + isHTML.swift */; };
+		DFE7FB56293B6779003E4C08 /* String + isHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE7FB52293B6779003E4C08 /* String + isHTML.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -723,6 +731,8 @@
 		A0F79FBC1F642AE2007CFC08 /* RDFTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RDFTests.swift; sourceTree = "<group>"; };
 		BB394B77223B35D700366193 /* Ampersand.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Ampersand.xml; sourceTree = "<group>"; };
 		BB394B7C223B368C00366193 /* AmpersandTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmpersandTests.swift; sourceTree = "<group>"; };
+		DFE7FB4D293B5F05003E4C08 /* makeJSONFeedFromFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = makeJSONFeedFromFeed.swift; sourceTree = "<group>"; };
+		DFE7FB52293B6779003E4C08 /* String + isHTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String + isHTML.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -933,6 +943,7 @@
 			children = (
 				A0F6B7C71F6E6E9600220625 /* Array + Equatable.swift */,
 				A0F6B7C81F6E6E9600220625 /* String + toBool.swift */,
+				DFE7FB52293B6779003E4C08 /* String + isHTML.swift */,
 				A0F6B7C91F6E6E9600220625 /* String + toDate.swift */,
 				A0F6B7CA1F6E6E9600220625 /* String + toDuration.swift */,
 				A0C788C720CC6332005C2F6F /* URL + replacingScheme.swift */,
@@ -984,6 +995,7 @@
 				A0F6B7E21F6E6E9600220625 /* JSONFeedAuthor.swift */,
 				A0F6B7E31F6E6E9600220625 /* JSONFeedHub.swift */,
 				A0F6B7E41F6E6E9600220625 /* JSONFeedItem.swift */,
+				DFE7FB4D293B5F05003E4C08 /* makeJSONFeedFromFeed.swift */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -1580,6 +1592,7 @@
 				A0F6B8561F6E6EB800220625 /* MediaCredit.swift in Sources */,
 				A0F6B8511F6E6EB800220625 /* iTunesSubCategory.swift in Sources */,
 				A0F6B8301F6E6EB800220625 /* Array + Equatable.swift in Sources */,
+				DFE7FB56293B6779003E4C08 /* String + isHTML.swift in Sources */,
 				A0F6B83E1F6E6EB800220625 /* AtomFeedEntryContributor.swift in Sources */,
 				A0F6B8591F6E6EB800220625 /* MediaGroup.swift in Sources */,
 				A0F6B85C1F6E6EB800220625 /* MediaLocation.swift in Sources */,
@@ -1612,6 +1625,7 @@
 				A0F6B8741F6E6EB800220625 /* RSSFeedCategory.swift in Sources */,
 				A0F6B8621F6E6EB800220625 /* MediaRating.swift in Sources */,
 				A0F6B8551F6E6EB800220625 /* MediaCopyright.swift in Sources */,
+				DFE7FB51293B5F05003E4C08 /* makeJSONFeedFromFeed.swift in Sources */,
 				A0F6B85E1F6E6EB800220625 /* MediaParam.swift in Sources */,
 				A0F6B87C1F6E6EB800220625 /* RSSFeedSkipDay.swift in Sources */,
 				A0F6B8851F6E6EB800220625 /* Feed.swift in Sources */,
@@ -1776,6 +1790,7 @@
 				A0F6B90E1F6E6EBB00220625 /* MediaCredit.swift in Sources */,
 				A0F6B9091F6E6EBB00220625 /* iTunesSubCategory.swift in Sources */,
 				A0F6B8E81F6E6EBA00220625 /* Array + Equatable.swift in Sources */,
+				DFE7FB54293B6779003E4C08 /* String + isHTML.swift in Sources */,
 				A0F6B8F61F6E6EBB00220625 /* AtomFeedEntryContributor.swift in Sources */,
 				A0F6B9111F6E6EBB00220625 /* MediaGroup.swift in Sources */,
 				A0F6B9141F6E6EBB00220625 /* MediaLocation.swift in Sources */,
@@ -1808,6 +1823,7 @@
 				A0F6B92C1F6E6EBB00220625 /* RSSFeedCategory.swift in Sources */,
 				A0F6B91A1F6E6EBB00220625 /* MediaRating.swift in Sources */,
 				A0F6B90D1F6E6EBB00220625 /* MediaCopyright.swift in Sources */,
+				DFE7FB4F293B5F05003E4C08 /* makeJSONFeedFromFeed.swift in Sources */,
 				A0F6B9161F6E6EBB00220625 /* MediaParam.swift in Sources */,
 				A0F6B9341F6E6EBB00220625 /* RSSFeedSkipDay.swift in Sources */,
 				A0F6B93D1F6E6EBB00220625 /* Feed.swift in Sources */,
@@ -1876,6 +1892,7 @@
 				A0F6B8B21F6E6EBA00220625 /* MediaCredit.swift in Sources */,
 				A0F6B8AD1F6E6EBA00220625 /* iTunesSubCategory.swift in Sources */,
 				A0F6B88C1F6E6EBA00220625 /* Array + Equatable.swift in Sources */,
+				DFE7FB55293B6779003E4C08 /* String + isHTML.swift in Sources */,
 				A0F6B89A1F6E6EBA00220625 /* AtomFeedEntryContributor.swift in Sources */,
 				A0F6B8B51F6E6EBA00220625 /* MediaGroup.swift in Sources */,
 				A0F6B8B81F6E6EBA00220625 /* MediaLocation.swift in Sources */,
@@ -1908,6 +1925,7 @@
 				A0F6B8D01F6E6EBA00220625 /* RSSFeedCategory.swift in Sources */,
 				A0F6B8BE1F6E6EBA00220625 /* MediaRating.swift in Sources */,
 				A0F6B8B11F6E6EBA00220625 /* MediaCopyright.swift in Sources */,
+				DFE7FB50293B5F05003E4C08 /* makeJSONFeedFromFeed.swift in Sources */,
 				A0F6B8BA1F6E6EBA00220625 /* MediaParam.swift in Sources */,
 				A0F6B8D81F6E6EBA00220625 /* RSSFeedSkipDay.swift in Sources */,
 				A0F6B8E11F6E6EBA00220625 /* Feed.swift in Sources */,
@@ -1976,6 +1994,7 @@
 				A0F6B96A1F6E6EBB00220625 /* MediaCredit.swift in Sources */,
 				A0F6B9651F6E6EBB00220625 /* iTunesSubCategory.swift in Sources */,
 				A0F6B9441F6E6EBB00220625 /* Array + Equatable.swift in Sources */,
+				DFE7FB53293B6779003E4C08 /* String + isHTML.swift in Sources */,
 				A0F6B9521F6E6EBB00220625 /* AtomFeedEntryContributor.swift in Sources */,
 				A0F6B96D1F6E6EBB00220625 /* MediaGroup.swift in Sources */,
 				A0F6B9701F6E6EBB00220625 /* MediaLocation.swift in Sources */,
@@ -2008,6 +2027,7 @@
 				A0F6B9881F6E6EBB00220625 /* RSSFeedCategory.swift in Sources */,
 				A0F6B9761F6E6EBB00220625 /* MediaRating.swift in Sources */,
 				A0F6B9691F6E6EBB00220625 /* MediaCopyright.swift in Sources */,
+				DFE7FB4E293B5F05003E4C08 /* makeJSONFeedFromFeed.swift in Sources */,
 				A0F6B9721F6E6EBB00220625 /* MediaParam.swift in Sources */,
 				A0F6B9901F6E6EBB00220625 /* RSSFeedSkipDay.swift in Sources */,
 				A0F6B9991F6E6EBB00220625 /* Feed.swift in Sources */,
