@@ -28,7 +28,7 @@ import Foundation
 public struct JSONFeedAttachment {
     
     /// (required, string) specifies the location of the attachment.
-    public var url: String?
+    public var url: URL?
     
     /// (required, string) specifies the type of the attachment, such as 
     /// "audio/mpeg."
@@ -78,7 +78,7 @@ extension JSONFeedAttachment: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         title = try values.decodeIfPresent(String.self, forKey: .title)
-        url = try values.decodeIfPresent(String.self, forKey: .url)
+        url = try values.decodeIfPresent(URL.self, forKey: .url)
         mimeType = try values.decodeIfPresent(String.self, forKey: .mime_type)
         sizeInBytes = try values.decodeIfPresent(Int.self, forKey: .size_in_bytes)
         durationInSeconds = try values.decodeIfPresent(TimeInterval.self, forKey: .duration_in_seconds)

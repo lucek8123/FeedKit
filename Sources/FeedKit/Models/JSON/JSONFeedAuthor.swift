@@ -36,7 +36,7 @@ public struct JSONFeedAuthor {
     /// blog, micro-blog, Twitter account, and so on. Ideally the linked-to page 
     /// provides a way to contact the author, but that's not required. The URL 
     /// could be a mailto: link, though we suspect that will be rare.
-    public var url: String?
+    public var url: URL?
     
     /// (optional, string) is the URL for an image for the author. As with icon, 
     /// it should be square and relatively large - such as 512 x 512 - and should 
@@ -70,7 +70,7 @@ extension JSONFeedAuthor: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         name = try values.decode(String.self, forKey: .name)
-        url = try values.decodeIfPresent(String.self, forKey: .url)
+        url = try values.decodeIfPresent(URL.self, forKey: .url)
         avatar = try values.decodeIfPresent(String.self, forKey: .avatar)
     }
     

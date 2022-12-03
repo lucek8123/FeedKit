@@ -10,6 +10,7 @@ import Foundation
 extension JSONFeed {
     public static func makeJSONFeed(from feed: Feed) -> JSONFeed {
         var newFeed = JSONFeed()
+        newFeed.version = "https://jsonfeed.org/version/1.1"
         switch feed {
         case .atom(let atomFeed):
             newFeed.title = atomFeed.title

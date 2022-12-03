@@ -39,12 +39,12 @@ public struct JSONFeedItem {
     /// (optional, string) is the URL of the resource described by the item. It's 
     /// the permalink. This may be the same as the id - but should be present 
     /// regardless.
-    public var url: String?
+    public var url: URL?
 
     /// (very optional, string) is the URL of a page elsewhere. This is especially
     /// useful for linkblogs. If url links to where you're talking about a thing,
     /// then external_url links to the thing you're talking about.
-    public var externalUrl: String?
+    public var externalUrl: URL?
 
     /// (optional, string) is plain text. Microblog items in particular may omit 
     /// titles.
@@ -75,14 +75,14 @@ public struct JSONFeedItem {
     /// may also appear in the content_html - if so, it's a hint to the feed reader
     /// that this is the main, featured image. Feed readers may use the image as a
     /// preview (probably resized as a thumbnail and placed in a timeline).
-    public var image: String?
+    public var image: URL?
     
     /// (optional, string) is the URL of an image to use as a banner. Some blogging
     /// systems (such as Medium) display a different banner image chosen to go with
     /// each post, but that image wouldn't otherwise appear in the content_html. 
     /// A feed reader with a detail view may choose to show this banner image at 
     /// the top of the detail view, possibly with the title overlaid.
-    public var bannerImage: String?
+    public var bannerImage: URL?
 
     /// (optional, string) specifies the date in RFC 3339 format. 
     /// (Example: 2010-02-07T14:04:00-05:00.)
@@ -128,8 +128,11 @@ extension JSONFeedItem: Codable {
         case date_published
         case date_modified
         case tags
-        case author
+        case authors
         case attachments
+        
+        /// NOTE: ONLY FOR 1.0 JSON FEED!!!
+        case author
     }
     
     public func encode(to encoder: Encoder) throws {
@@ -146,26 +149,33 @@ extension JSONFeedItem: Codable {
         try container.encode(datePublished, forKey: .date_published)
         try container.encode(dateModified, forKey: .date_modified)
         try container.encode(tags, forKey: .tags)
-        try container.encode(authors, forKey: .author)
+        try container.encode(authors, forKey: .authors)
         try container.encode(attachments, forKey: .attachments)
     }
     
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
+        
+        // JSON Feed 1.1
         id = try values.decodeIfPresent(String.self, forKey: .id)
         title = try values.decodeIfPresent(String.self, forKey: .title)
-        url = try values.decodeIfPresent(String.self, forKey: .url)
-        externalUrl = try values.decodeIfPresent(String.self, forKey: .external_url)
+        url = try values.decodeIfPresent(URL.self, forKey: .url)
+        externalUrl = try values.decodeIfPresent(URL.self, forKey: .external_url)
         contentText = try values.decodeIfPresent(String.self, forKey: .content_text)
         contentHtml = try values.decodeIfPresent(String.self, forKey: .content_html)
         summary = try values.decodeIfPresent(String.self, forKey: .summary)
-        image = try values.decodeIfPresent(String.self, forKey: .image)
-        bannerImage = try values.decodeIfPresent(String.self, forKey: .banner_image)
+        image = try values.decodeIfPresent(URL.self, forKey: .image)
+        bannerImage = try values.decodeIfPresent(URL.self, forKey: .banner_image)
         datePublished = try values.decodeIfPresent(Date.self, forKey: .date_published)
         dateModified = try values.decodeIfPresent(Date.self, forKey: .date_modified)
         tags = try values.decodeIfPresent([String].self, forKey: .tags)
-        authors = try values.decodeIfPresent([JSONFeedAuthor].self, forKey: .author)
+        authors = try values.decodeIfPresent([JSONFeedAuthor].self, forKey: .authors)
         attachments = try values.decodeIfPresent([JSONFeedAttachment].self, forKey: .attachments)
+        
+        // JSON Feed 1.0
+        if let author = try values.decodeIfPresent(JSONFeedAuthor.self, forKey: .author) {
+            authors = [author]
+        }
     }
     
 }
